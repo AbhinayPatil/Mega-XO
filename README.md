@@ -1,16 +1,9 @@
 # xo_game
 
-A new Flutter project.
+Introducing the ultimate Tic Tac Toe experience - Mega Tic Tac Toe!
+Built using Flutter, this game offers a unique twist on the classic game we all know and love. Instead of a traditional 3x3 grid, Mega Tic Tac Toe features a massive 9x9 grid, providing endless possibilities for gameplay.
+Challenge yourself and your friends to see who can master the Mega Tic Tac Toe board and claim victory. With smooth and responsive controls, this game offers an immersive and enjoyable experience for players of all ages.
+(apk file provided above)
 
-## Getting Started
+<img src="https://user-images.githubusercontent.com/89311783/212228998-e3aff79e-a952-4675-8aa2-066224d468d6.jpg" width = 250> <img src="https://user-images.githubusercontent.com/89311783/212229192-5c6f53ff-e29d-420c-b921-3502b9443f0d.jpg" width = 250> <img src="https://user-images.githubusercontent.com/89311783/212229316-0b77e3ac-0e49-4ff3-beef-227c0b6355a8.jpg" width = 250>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
