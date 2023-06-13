@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:provider/provider.dart';
 import 'package:xo_game/game_provider.dart';
+import 'package:xo_game/rules.dart';
 
 class InfoBox extends StatefulWidget {
   @override
@@ -157,47 +160,104 @@ class _InfoBoxState extends State<InfoBox> {
       _width = MediaQuery.of(context).size.width - _height * 1.1;
     } else {
       _width = MediaQuery.of(context).size.width;
-      _height = MediaQuery.of(context).size.height - _width * 1.1;
+      _height = MediaQuery.of(context).size.height - _width * .9;
     }
-    return Container(
-      height: _height,
-      width: _width,
-      child: Column(
-        children: [
-          Row(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: SizedBox(
+          height: _height,
+          width: _width,
+          child: Wrap(
             children: [
-              displayerX(_height, _width),
-              displayerY(_height, _width),
-            ],
-          ),
-          GestureDetector(
-            onTap: () {
-              Phoenix.rebirth(context);
-            },
-            child: Container(
-              width: _width * .3,
-              decoration: BoxDecoration(
-                color: Colors.deepPurpleAccent.shade100,
-                border: Border.all(color: Colors.deepPurple, width: 3),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
+              Row(
+                children: [
+                  FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: displayerX(_height, _width)),
+                  FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: displayerY(_height, _width)),
+                ],
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Center(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      "Restart",
-                      style: TextStyle(color: Colors.white, fontSize: 24),
-                    ),
+              Center(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Phoenix.rebirth(context);
+                        },
+                        child: Container(
+                          width: _width * .3,
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurpleAccent.shade100,
+                            border:
+                                Border.all(color: Colors.deepPurple, width: 3),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Center(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  "Restart",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 24),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RulesScreen()),
+                          );
+                        },
+                        child: Container(
+                          width: _width * .3,
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurpleAccent.shade100,
+                            border:
+                                Border.all(color: Colors.deepPurple, width: 3),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Center(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  "Rules",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 24),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
