@@ -138,6 +138,20 @@ class RulesScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "-Developed by Abhinay Patil",
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.white.withOpacity(
+                                .2,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
